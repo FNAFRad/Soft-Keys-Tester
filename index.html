@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KaiOS Soft Key Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Press the Soft Keys</h1>
+    <p id="status">Press Left, Right, or Center Soft Key</p>
+
+    <script>
+        // Listen for keydown events
+        document.addEventListener("keydown", function(event) {
+            if (event.keyCode === 13) {
+                // LSK (Left Soft Key) pressed
+                document.getElementById("status").textContent = "You pressed Left Soft Key (LSK)!";
+            } else if (event.keyCode === 14) {
+                // RSK (Right Soft Key) pressed
+                document.getElementById("status").textContent = "You pressed Right Soft Key (RSK)!";
+            } else if (event.keyCode === 12 || event.keyCode === 5) {
+                // CSK (Center Soft Key) pressed
+                document.getElementById("status").textContent = "You pressed Center Soft Key (CSK)!";
+            }
+        });
+    </script>
+</body>
+</html>
