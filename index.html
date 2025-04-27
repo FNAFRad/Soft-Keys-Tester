@@ -17,16 +17,18 @@
     <p id="status">Press Left, Right, or Center Soft Key</p>
 
     <script>
-        // Listen for keydown events
+        // KaiOS key handling for LSK, RSK, and CSK
         document.addEventListener("keydown", function(event) {
-            if (event.keyCode === 13) {
-                // LSK (Left Soft Key) pressed
+            // For the Left Soft Key (LSK), this might be recognized as 'softkey' event in KaiOS
+            if (event.key === "SoftLeft") {
                 document.getElementById("status").textContent = "You pressed Left Soft Key (LSK)!";
-            } else if (event.keyCode === 14) {
-                // RSK (Right Soft Key) pressed
+            } 
+            // For Right Soft Key (RSK), similar handling for "SoftRight"
+            else if (event.key === "SoftRight") {
                 document.getElementById("status").textContent = "You pressed Right Soft Key (RSK)!";
-            } else if (event.keyCode === 12 || event.keyCode === 5) {
-                // CSK (Center Soft Key) pressed
+            } 
+            // For the Center Soft Key (CSK)
+            else if (event.key === "Enter") {  // Typically mapped to the 'Enter' key for CSK
                 document.getElementById("status").textContent = "You pressed Center Soft Key (CSK)!";
             }
         });
